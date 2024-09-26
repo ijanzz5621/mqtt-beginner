@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "mqtt-beginner"
+version = "1.0.0"
+description = "Learning MQTT"
+authors = ["Sharizan Redzuan <sharizan_81@yahoo.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+paho-mqtt = "^2.1.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
