@@ -13,13 +13,16 @@ def on_connect(client, userdata, flags, reason_code, properties):
 def on_message(client, userdata, msg):
     print(msg.topic+" "+str(msg.payload))
 
-mqttBroker = "localhost"
+mqttBroker = "192.168.1.101"
 client = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2, client_id="Temperature_Inside")
 
-client.on_connect = on_connect
-client.on_message = on_message
+client.tls_set()
+# client.username_pw_set(username="general", password="p@ssw0rd!")
 
-client.connect(mqttBroker, port=1883)
+client.on_connect = on_connect
+# client.on_message = on_message
+
+client.connect(mqttBroker, port=1883, keepalive=60)
 
 while True:
     randNumber = uniform(20.0, 21.0)

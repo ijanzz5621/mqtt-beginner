@@ -13,7 +13,7 @@ def on_connect(client, userdata, flags, reason_code, properties):
 def on_message(client, userdata, msg):
     print(msg.topic+" "+str(msg.payload))
 
-mqttBroker = "localhost"
+mqttBroker = "192.168.1.101"
 client = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2, client_id="Temperature_Outside")
 
 client.on_connect = on_connect
